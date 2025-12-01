@@ -1,0 +1,33 @@
+{
+  "name": "template-typescript",
+  "version": "0.0.1",
+  "description": "Template project",
+  "keywords": [
+    "typescript",
+    "jest",
+    "template"
+  ],
+  "homepage": "https://github.com/dancetrain/template-typescript#readme",
+  "bugs": {
+    "url": "https://github.com/dancetrain/template-typescript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dancetrain/template-typescript.git"
+  },
+  "license": "MIT",
+  "author": "Pavel Borsky",
+  "type": "module",
+  "main": "main.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "ts-jest": "^29.1.1",
+    "@types/jest": "^29.5.3"
+  }
+}
