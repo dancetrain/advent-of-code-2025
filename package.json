@@ -20,14 +20,16 @@
   "type": "module",
   "main": "main.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "d1": "npm exec --package ts-node ts-node day_01.ts"
   },
   "dependencies": {
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "@types/node": "^24.10.1",
     "jest": "^30.2.0",
-    "ts-jest": "^29.1.1",
-    "@types/jest": "^29.5.3"
+    "ts-jest": "^29.1.1"
   }
 }
