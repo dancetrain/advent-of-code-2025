@@ -3,9 +3,8 @@ import { Day01 } from "./Day01.ts";
 describe('Day01 Test', () => {
 
     it ('Day01 correctly converts line to rotation', () => {
-
         expect (Day01.convertLineToPoint("R46")).toBe(46);
-        expect (Day01.convertLineToPoint("L12")).toBe(12);
+        expect (Day01.convertLineToPoint("L12")).toBe(-12);
     });
 
     it ('Verify NormalizationRotation', () => {
@@ -20,27 +19,25 @@ describe('Day01 Test', () => {
         expect (Day01.normalizePoint(-400)).toBe(0);
     });
 
-    it('Day01 solvePart1 simple tests', () => {
-        const day01 = new Day01();
-        // test rotations overflow only
-    
-        expect (day01.solvePart1(["L50"])).toBe(1);
-        expect (day01.solvePart1(["R50"])).toBe(1);
-        expect (day01.solvePart1(["L51"])).toBe(0);
-    });
+    it ('Verify apply operation', () => {
+        const result1 = Day01.applyRotation({currentDial: 50, rotationAction: "R60"});
+        expect (result1.dialPoints).toBe(10);
+        expect (result1.zeroHits).toBe(1);
 
-    it('Example input', () => {
-        const day01 = new Day01();
-        const input = ["L68",
-                        "L30",
-                        "R48",
-                        "L5",
-                        "R60",
-                        "L55",
-                        "L1",
-                        "L99",
-                        "R14",
-                        "L82"];
-        expect (day01.solvePart1(input)).toBe(3);
-    })
+        const result2 = Day01.applyRotation({currentDial: 90, rotationAction: "R20"});
+        expect (result2.dialPoints).toBe(10);
+        expect (result2.zeroHits).toBe(1);
+
+        const result3 = Day01.applyRotation({currentDial: 10, rotationAction: "L15"});
+        expect (result3.dialPoints).toBe(95);
+        expect (result3.zeroHits).toBe(1);
+        
+        const result4 = Day01.applyRotation({currentDial: 5, rotationAction: "L10"});
+        expect (result4.dialPoints).toBe(95);
+        expect (result4.zeroHits).toBe(1);
+
+        const result5 = Day01.applyRotation({currentDial: 0, rotationAction: "L300"});
+        expect (result5.dialPoints).toBe(0);
+        expect (result5.zeroHits).toBe(3);
+    });
 });

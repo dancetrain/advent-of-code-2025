@@ -13,7 +13,7 @@ async function main() {
     const input = fs.readFileSync("day_01.txt", "utf-8").trim().split("\n");
 
     const result = day01.solvePart1(input);
-    console.log(`Day 01 Part 1: ${result}`);
+    console.log(`Day 01 Part 1: ${JSON.stringify(result)}`);
 }
 
 main().catch(console.error);
